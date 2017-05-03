@@ -2,7 +2,7 @@ var path = require('path')
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/index',
+  entry: './src/index.tsx',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -28,9 +28,5 @@ module.exports = {
         loader: 'source-map-loader'
       }
     ]
-  },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM'
   }
 }
