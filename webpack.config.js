@@ -2,11 +2,10 @@ var path = require('path')
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/index.tsx',
+  entry: './src/index',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    filename: 'bundle.js'
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', 'json']

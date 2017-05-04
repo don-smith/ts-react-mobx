@@ -13,21 +13,28 @@
   "license": "ISC",
   "jest": {
     "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.(js|jsx)$": "babel-jest",
+      "^.+\\.(ts|tsx)$": "typescript-babel-jest"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
       "js",
-      "json"
+      "jsx"
     ]
   },
   "babel": {
     "presets": [
       "es2015",
-      "react"
+      "react",
+      {"modules": false}
     ]
+  },
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
   },
   "dependencies": {
     "@types/react": "^15.0.23",
@@ -49,8 +56,14 @@
     "webpack-dev-server": "^2.4.5"
   },
   "devDependencies": {
+    "@types/enzyme": "^2.8.0",
     "@types/jest": "^19.2.2",
+    "babel-jest": "^19.0.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^2.8.2",
     "jest": "^19.0.2",
+    "jest-cli": "^19.0.2",
+    "react-test-renderer": "^15.5.4",
     "sinon": "^2.2.0",
     "ts-jest": "^19.0.14"
   }

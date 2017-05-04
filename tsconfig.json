@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "declaration": false,
-    "noImplicitAny": false,
     "removeComments": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "noLib": false,
     "jsx": "react",
     "outDir": "dist"
   },
